@@ -28,7 +28,7 @@ int main() {
                 << endl << "성별 is" << human1.dontknowenglish;
     }
     else {
-        cout << "name =" << human2.name << endl << "age =" << human2.age << endl << "brawl sujun =" << human2.brawl_sujun;
+        cout << "name =" << human2.name << endl << "age =" << human2.age << endl << "brawl sujun =" << human2.brawl_sujun
                 << endl << "성별 is" << human2.dontknowenglish;
     }
 }
