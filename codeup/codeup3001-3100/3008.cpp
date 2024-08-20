@@ -32,6 +32,5 @@ int main() {
         if(height[i] !=0) {
             cout<<height[i]<<endl;
         }
-    }
-    
+    }   
 }
