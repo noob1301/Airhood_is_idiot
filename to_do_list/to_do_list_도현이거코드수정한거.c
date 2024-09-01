@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define printf printf("\n"); printf
-
 int main() {
     int s;
     char s1[100][50];
