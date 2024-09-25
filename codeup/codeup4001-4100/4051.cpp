@@ -1,5 +1,4 @@
 #include<iostream>
-#include<stack>
 int main(){
     float s,e,S=0;
     for(int i=0;i<5;i++){
