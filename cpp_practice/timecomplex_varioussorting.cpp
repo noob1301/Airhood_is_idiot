@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
-int list[200];
+#include<ctime>
+int list[10000];
 
 using namespace std;
 
@@ -9,6 +10,7 @@ int suffle(int a,int b,int c){
 }
 int main(){
     int receive,receive3,receive4,store,store2,changetime,comparisons;
+    clock_t start,end;
     string receive2;
     first:
     cout<<"정렬 방법에 따른 교환횟수,비교횟수 탐색기"<<endl;
@@ -21,9 +23,9 @@ int main(){
     }
     cout<<"아무숫자나:";
     cin>>receive4;
-    cout<<"정렬할 원소의 갯수를 쓰세요(최대 200):";
+    cout<<"정렬할 원소의 갯수를 쓰세요(최대 10000):";
     cin>>receive3;
-    if(receive3>200){
+    if(receive3>10000){
         cout<<"Wrong answer"<<endl;
         goto last;
     }
@@ -34,14 +36,9 @@ int main(){
         list[suffle(i,i+receive,suffle(i,receive4+1,receive4+2))%receive3]=list[i];
         list[i]=store;
     }
-    cout<<"섞인 배열:"<<endl;
-    for(int i=0;i<receive3;i++){
-        cout<<list[i]<<' ';
-        if(i%10==9)
-            cout<<endl;
-    }
     cout<<endl<<"--------------"<<endl;
     changetime=0,comparisons=0;
+    start=clock();
     if(receive==1){
         for(int i=0;i<receive3-1;i++)
             for(int j=0;j<receive3-i-1;j++){
@@ -82,14 +79,9 @@ int main(){
             changetime++;
         }
     }
-    cout<<"정렬된 배열:"<<endl;
-    for(int i=0;i<receive3;i++){
-        cout<<list[i]<<' ';
-        if(i%10==9)
-            cout<<endl;
-    }
-    cout<<endl<<"---------------"<<endl;
-    cout<<"비교 횟수:"<<comparisons<<endl<<"교체 횟수:"<<changetime<<endl;
+    end=clock();
+    cout<<"비교 횟수:"<<comparisons<<endl<<"교체 횟수:"<<changetime<<endl<<"걸린 시간:"<<(end-start)/(CLOCKS_PER_SEC*1.0);
+    cout<<endl;
     last:
     cout<<"Do you want again?(Yes,No):";
     cin>>receive2;
